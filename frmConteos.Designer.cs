@@ -351,7 +351,7 @@
             this.label7.Location = new System.Drawing.Point(53, 2);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 20);
-            this.label7.Text = "Version: 3.1";
+            this.label7.Text = "Version: 3.1.1";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tpConteos
@@ -781,7 +781,7 @@
             this.tpPruebas.Controls.Add(this.pnlImpresion);
             this.tpPruebas.Location = new System.Drawing.Point(0, 0);
             this.tpPruebas.Name = "tpPruebas";
-            this.tpPruebas.Size = new System.Drawing.Size(240, 268);
+            this.tpPruebas.Size = new System.Drawing.Size(232, 265);
             this.tpPruebas.Text = "Pruebas";
             // 
             // pnlImpresion
