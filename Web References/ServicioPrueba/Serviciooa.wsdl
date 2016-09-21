@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://200.56.177.82/ServicioOA/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://200.56.177.82/ServicioOA/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://200.56.177.82/ServicioOA/">
+      <s:element name="IniciarVisita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IniciarVisitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IniciarVisitaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FinalizarVisita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVisita" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FinalizarVisitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FinalizarVisitaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProductoConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVisita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pClave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProductoConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarProductoConteoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRestantesConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVisita" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRestantesConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRestantesConteoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDiferenciasConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVisita" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDiferenciasConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDiferenciasConteoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPreFactura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVisita" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPreFacturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPreFacturaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVisita" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerBalanceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarConteos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsProductos">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarConteosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarConteosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IniciarVisitaSoapIn">
+    <wsdl:part name="parameters" element="tns:IniciarVisita" />
+  </wsdl:message>
+  <wsdl:message name="IniciarVisitaSoapOut">
+    <wsdl:part name="parameters" element="tns:IniciarVisitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="FinalizarVisitaSoapIn">
+    <wsdl:part name="parameters" element="tns:FinalizarVisita" />
+  </wsdl:message>
+  <wsdl:message name="FinalizarVisitaSoapOut">
+    <wsdl:part name="parameters" element="tns:FinalizarVisitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProductoConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarProductoConteo" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProductoConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarProductoConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRestantesConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerRestantesConteo" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRestantesConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerRestantesConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDiferenciasConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDiferenciasConteo" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDiferenciasConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDiferenciasConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPreFacturaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPreFactura" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPreFacturaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPreFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerBalance" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarConteosSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarConteos" />
+  </wsdl:message>
+  <wsdl:message name="AgregarConteosSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarConteosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioOASoap">
+    <wsdl:operation name="IniciarVisita">
+      <wsdl:input message="tns:IniciarVisitaSoapIn" />
+      <wsdl:output message="tns:IniciarVisitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarVisita">
+      <wsdl:input message="tns:FinalizarVisitaSoapIn" />
+      <wsdl:output message="tns:FinalizarVisitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProductoConteo">
+      <wsdl:input message="tns:EliminarProductoConteoSoapIn" />
+      <wsdl:output message="tns:EliminarProductoConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRestantesConteo">
+      <wsdl:input message="tns:ObtenerRestantesConteoSoapIn" />
+      <wsdl:output message="tns:ObtenerRestantesConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDiferenciasConteo">
+      <wsdl:input message="tns:ObtenerDiferenciasConteoSoapIn" />
+      <wsdl:output message="tns:ObtenerDiferenciasConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPreFactura">
+      <wsdl:input message="tns:ObtenerPreFacturaSoapIn" />
+      <wsdl:output message="tns:ObtenerPreFacturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBalance">
+      <wsdl:input message="tns:ObtenerBalanceSoapIn" />
+      <wsdl:output message="tns:ObtenerBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarConteos">
+      <wsdl:input message="tns:AgregarConteosSoapIn" />
+      <wsdl:output message="tns:AgregarConteosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioOASoap" type="tns:ServicioOASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarVisita">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/IniciarVisita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarVisita">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/FinalizarVisita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProductoConteo">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/EliminarProductoConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRestantesConteo">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerRestantesConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDiferenciasConteo">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerDiferenciasConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPreFactura">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerPreFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBalance">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarConteos">
+      <soap:operation soapAction="http://200.56.177.82/ServicioOA/AgregarConteos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioOASoap12" type="tns:ServicioOASoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarVisita">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/IniciarVisita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarVisita">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/FinalizarVisita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProductoConteo">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/EliminarProductoConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRestantesConteo">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerRestantesConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDiferenciasConteo">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerDiferenciasConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPreFactura">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerPreFactura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBalance">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/ObtenerBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarConteos">
+      <soap12:operation soapAction="http://200.56.177.82/ServicioOA/AgregarConteos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioOA">
+    <wsdl:port name="ServicioOASoap" binding="tns:ServicioOASoap">
+      <soap:address location="http://200.56.117.82/ServicioOA/Serviciooa.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioOASoap12" binding="tns:ServicioOASoap12">
+      <soap12:address location="http://200.56.117.82/ServicioOA/Serviciooa.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
