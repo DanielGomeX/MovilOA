@@ -478,7 +478,7 @@
             this.tpRestantes.Controls.Add(this.pnlRestantes);
             this.tpRestantes.Location = new System.Drawing.Point(0, 0);
             this.tpRestantes.Name = "tpRestantes";
-            this.tpRestantes.Size = new System.Drawing.Size(232, 265);
+            this.tpRestantes.Size = new System.Drawing.Size(240, 268);
             this.tpRestantes.Text = "Restantes";
             // 
             // pnlRestantes
@@ -490,7 +490,7 @@
             this.pnlRestantes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRestantes.Location = new System.Drawing.Point(0, 0);
             this.pnlRestantes.Name = "pnlRestantes";
-            this.pnlRestantes.Size = new System.Drawing.Size(232, 265);
+            this.pnlRestantes.Size = new System.Drawing.Size(240, 268);
             // 
             // btnRegistrarExistencia
             // 
@@ -781,7 +781,7 @@
             this.tpPruebas.Controls.Add(this.pnlImpresion);
             this.tpPruebas.Location = new System.Drawing.Point(0, 0);
             this.tpPruebas.Name = "tpPruebas";
-            this.tpPruebas.Size = new System.Drawing.Size(232, 265);
+            this.tpPruebas.Size = new System.Drawing.Size(240, 268);
             this.tpPruebas.Text = "Pruebas";
             // 
             // pnlImpresion
